@@ -6,8 +6,12 @@
 
 //..\..\Windows\Debug\bin\lrelease .\Notepad_en_US.xml -qm .\Notepad_en_US.bin
 
+extern int qInitResources();
+extern int qCleanupResources();
+
 int main(int argc, char *argv[])
 {
+    /*QApplication a(argc, argv);
     /*QApplication a(argc, argv);
 
     QTranslator translator;
@@ -24,10 +28,12 @@ int main(int argc, char *argv[])
     return a.exec();*/
 
     QApplication a(argc, argv);
+    qInitResources();
     MainWindow w;
     w.show();
     while(w.isRunning())
         a.processEvents();
+	qCleanupResources();
     return 0;
     
 }
