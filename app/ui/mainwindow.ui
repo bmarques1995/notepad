@@ -55,8 +55,24 @@
     <addaction name="actionRedo"/>
     <addaction name="actionUndo"/>
    </widget>
+   <widget class="QMenu" name="menuFormat">
+    <property name="title">
+     <string>Format</string>
+    </property>
+    <addaction name="actionColor"/>
+    <addaction name="actionBackground"/>
+    <addaction name="actionFont"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionInfo"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
+   <addaction name="menuFormat"/>
+   <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
@@ -195,6 +211,42 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionColor">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/main/cor.svg</normaloff>:/icons/main/undo.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Color</string>
+   </property>
+  </action>
+  <action name="actionBackground">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/main/background.svg</normaloff>:/icons/main/undo.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Background</string>
+   </property>
+  </action>
+  <action name="actionFont">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/main/font.svg</normaloff>:/icons/main/undo.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Font</string>
+   </property>
+  </action>
+  <action name="actionInfo">
+  <property name="icon">
+    <iconset>
+     <normaloff>:/icons/main/about.svg</normaloff>:/icons/main/undo.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Info</string>
    </property>
   </action>
  </widget>

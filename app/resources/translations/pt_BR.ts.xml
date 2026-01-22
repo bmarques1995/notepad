@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="pt_BR">
+	<context>
+		<name>MainWindow</name>
+		<!-- Main window -->
+		<message>
+			<source>MainWindow</source>
+			<translation>Janela Principal</translation>
+		</message>
+		<!-- Menus -->
+		<message>
+			<source>File</source>
+			<translation>Arquivo</translation>
+		</message>
+		<message>
+			<source>Edit</source>
+			<translation>Editar</translation>
+		</message>
+		<message>
+			<source>Format</source>
+			<translation>Formatar</translation>
+		</message>
+		<message>
+			<source>About</source>
+			<translation>Sobre</translation>
+		</message>
+		<!-- Toolbar -->
+		<message>
+			<source>toolBar</source>
+			<translation>Barra de Ferramentas</translation>
+		</message>
+		<!-- Actions -->
+		<message>
+			<source>New</source>
+			<translation>Novo</translation>
+		</message>
+		<message>
+			<source>Open</source>
+			<translation>Abrir</translation>
+		</message>
+		<message>
+			<source>Save</source>
+			<translation>Salvar</translation>
+		</message>
+		<message>
+			<source>Save as</source>
+			<translation>Salvar como</translation>
+		</message>
+		<message>
+			<source>Exit</source>
+			<translation>Sair</translation>
+		</message>
+		<message>
+			<source>Copy</source>
+			<translation>Copiar</translation>
+		</message>
+		<message>
+			<source>Paste</source>
+			<translation>Colar</translation>
+		</message>
+		<message>
+			<source>Cut</source>
+			<translation>Recortar</translation>
+		</message>
+		<message>
+			<source>Redo</source>
+			<translation>Refazer</translation>
+		</message>
+		<message>
+			<source>Undo</source>
+			<translation>Desfazer</translation>
+		</message>
+		<message>
+			<source>Color</source>
+			<translation>Cor</translation>
+		</message>
+		<message>
+			<source>Background</source>
+			<translation>Plano de Fundo</translation>
+		</message>
+		<message>
+			<source>Font</source>
+			<translation>Fonte</translation>
+		</message>
+		<message>
+			<source>Info</source>
+			<translation>Informações</translation>
+		</message>
+	</context>
+	<context>
+		<name>MainWindowAbout</name>
+		<message>
+			<source>Developed by Bruno S Marques, available at </source>
+			<translation>Desenvolvido por Bruno S Marques, disponível em </translation>
+		</message>
+		<message>
+			<source>under</source>
+			<translation>sob a</translation>
+		</message>
+	</context>
+	<context>
+		<name>MainWindowMessages</name>
+		<message>
+			<source>About QNotepad</source>
+			<translation>Sobre o QNotepad</translation>
+		</message>
+		<message>
+			<source>Select Text Color</source>
+			<translation>Selecione a Cor do Texto</translation>
+		</message>
+		<message>
+			<source>Warning</source>
+			<translation>Aviso</translation>
+		</message>
+		<message>
+			<source>Cannot write file %1:\n%2.</source>
+			<translation>Não foi possível gravar o arquivo %1:\n%2.</translation>
+		</message>
+		<message>
+			<source>Cannot read file %1:\n%2.</source>
+			<translation>Não foi possível carregar o arquivo %1:\n%2.</translation>
+		</message>
+		<message>
+			<source>Save File</source>
+			<translation>Salvar Arquivo</translation>
+		</message>
+		<message>
+			<source>Open File</source>
+			<translation>Abrir Arquivo</translation>
+		</message>
+	</context>
+	<context>
+		<name>ThreeWayDialog</name>
+		<message>
+			<source>What do you want to do?</source>
+			<translation>O que voce deseja fazer?</translation>
+		</message>
+		<message>
+			<source>Actions</source>
+			<translation>Ações</translation>
+		</message>
+		<message>
+			<source>Save and quit</source>
+			<translation>Salvar e sair</translation>
+		</message>
+		<message>
+			<source>Quit without saving</source>
+			<translation>Sair sem salvar</translation>
+		</message>
+		<message>
+			<source>Cancel</source>
+			<translation>Cancelar</translation>
+		</message>
+	</context>
+</TS>

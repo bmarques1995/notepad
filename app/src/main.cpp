@@ -29,6 +29,9 @@ int main(int argc, char *argv[])
 
     QApplication a(argc, argv);
     qInitResources();
+    QTranslator translator;
+    translator.load("./translations/pt_BR.qm");
+    a.installTranslator(&translator);
     MainWindow w;
     w.show();
     while(w.isRunning())
