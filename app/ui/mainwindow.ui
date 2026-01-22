@@ -69,10 +69,17 @@
     </property>
     <addaction name="actionInfo"/>
    </widget>
+   <widget class="QMenu" name="menuPreferences">
+    <property name="title">
+     <string>Preferences</string>
+    </property>
+    <addaction name="actionSettings"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuFormat"/>
    <addaction name="menuAbout"/>
+   <addaction name="menuPreferences"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
@@ -216,7 +223,7 @@
   <action name="actionColor">
    <property name="icon">
     <iconset>
-     <normaloff>:/icons/main/cor.svg</normaloff>:/icons/main/undo.svg</iconset>
+     <normaloff>:/icons/main/cor.svg</normaloff>:/icons/main/cor.svg</iconset>
    </property>
    <property name="text">
     <string>Color</string>
@@ -225,7 +232,7 @@
   <action name="actionBackground">
    <property name="icon">
     <iconset>
-     <normaloff>:/icons/main/background.svg</normaloff>:/icons/main/undo.svg</iconset>
+     <normaloff>:/icons/main/background.svg</normaloff>:/icons/main/background.svg</iconset>
    </property>
    <property name="text">
     <string>Background</string>
@@ -234,19 +241,27 @@
   <action name="actionFont">
    <property name="icon">
     <iconset>
-     <normaloff>:/icons/main/font.svg</normaloff>:/icons/main/undo.svg</iconset>
+     <normaloff>:/icons/main/font.svg</normaloff>:/icons/main/font.svg</iconset>
    </property>
    <property name="text">
     <string>Font</string>
    </property>
   </action>
   <action name="actionInfo">
-  <property name="icon">
+   <property name="icon">
     <iconset>
-     <normaloff>:/icons/main/about.svg</normaloff>:/icons/main/undo.svg</iconset>
+     <normaloff>:/icons/main/about.svg</normaloff>:/icons/main/about.svg</iconset>
    </property>
    <property name="text">
     <string>Info</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
    </property>
   </action>
  </widget>

@@ -2,6 +2,7 @@
 
 #include <QMainWindow>
 #include "threewaydialog.hpp"
+#include <QFile>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -38,12 +39,16 @@ public slots:
     void on_actionColor_triggered();
     void on_actionBackground_triggered();
 
+    void on_actionSettings_triggered();
+
 private:
     QString m_CurrentFilename;
     QString m_AllFiles = "*.txt;*.md";
     QString m_InitialContent = "";
     Ui::MainWindow *ui;
     bool m_IsRunning = true;
+
+    void OpenFile(QFile& file, const QString& filename);
 
     ThreeWayDialog::Result closeAction();
 

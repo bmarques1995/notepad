@@ -123,7 +123,7 @@ void MainWindow::on_actionSave_as_triggered()
 		QString warningMsg = QCoreApplication::translate("MainWindowMessages", "Warning");
 		QString fileMsg = s_FileWriteMsg;
 		fileMsg.arg(m_CurrentFilename).arg(file.errorString());
-		if(file.exists())
+		if (file.exists())
 			QMessageBox::warning(this, s_WarningMsg, fileMsg);
 		return;
 	}
@@ -190,6 +190,35 @@ void MainWindow::on_actionBackground_triggered()
 	QColor color = QColorDialog::getColor(Qt::white, this, s_TextColorSelect);
 	if (color.isValid())
 		ui->textEdit->setTextBackgroundColor(color);
+}
+
+void MainWindow::on_actionSettings_triggered()
+{
+	std::string filename = std::filesystem::current_path().string() + "/settings.json";
+	m_CurrentFilename = filename.c_str();
+	QFile file(filename.c_str());
+	QString qfilename = filename.c_str();
+	OpenFile(file, qfilename);
+}
+
+void MainWindow::OpenFile(QFile& file, const QString& filename)
+{
+	if (file.exists())
+	{
+		if (!file.open(QFile::ReadOnly | QFile::Text))
+		{
+			QString preReadWarning = s_FileReadMsg;
+			preReadWarning.arg(filename).arg(file.errorString());
+			QMessageBox::warning(this, s_WarningMsg, preReadWarning);
+			return;
+		}
+		QTextStream enterFile(&file);
+		QString text = enterFile.readAll();
+		m_InitialContent = text;
+		ui->textEdit->setText(text);
+	}
+
+	file.close();
 }
 
 ThreeWayDialog::Result MainWindow::closeAction()

@@ -1,6 +1,7 @@
-trace_dependency(NAME Qt6 6.10 COMPONENTS Core Widgets INSTALL_SCRIPT "${PROJECT_SOURCE_DIR}/installers/qtbase.cmake.json" WORKING_DIR "${FETCHERS_LOCATION}")
-trace_dependency(NAME Qt6 6.10 COMPONENTS LinguistTools INSTALL_SCRIPT "${PROJECT_SOURCE_DIR}/installers/qttools.cmake.json" WORKING_DIR "${FETCHERS_LOCATION}")
-trace_dependency(NAME Qt6 6.10 COMPONENTS Svg INSTALL_SCRIPT "${PROJECT_SOURCE_DIR}/installers/qtsvg.cmake.json" WORKING_DIR "${FETCHERS_LOCATION}")
+trace_dependency(NAME JsonCpp INSTALL_SCRIPT "${PROJECT_SOURCE_DIR}/installers/jsoncpp.cmake.json")
+trace_dependency(NAME Qt6 COMPONENTS Core Widgets INSTALL_SCRIPT "${PROJECT_SOURCE_DIR}/installers/qtbase.cmake.json")
+trace_dependency(NAME Qt6 COMPONENTS LinguistTools INSTALL_SCRIPT "${PROJECT_SOURCE_DIR}/installers/qttools.cmake.json")
+trace_dependency(NAME Qt6 COMPONENTS Svg INSTALL_SCRIPT "${PROJECT_SOURCE_DIR}/installers/qtsvg.cmake.json")
 
 find_program(QT_RCC rcc REQUIRED)
 find_program(QT_LRELEASE lrelease REQUIRED)
@@ -61,4 +62,5 @@ target_link_libraries(${PACKAGE_NAME}
     PRIVATE
         Qt::Core
         Qt::Widgets
+		jsoncpp_lib
 )
