@@ -4,7 +4,7 @@
     "location": "https://code.qt.io/qt/qttools.git",
     "output_suffix": "qttools",
     "branch": "6.10.1",
-    "commit": "",
+    "commit": "541b0c2127aa3496eb9870389c9a278e157e9b07",
     "patch": ""
 
   },
@@ -14,8 +14,8 @@
     "flags": [ "-DQT_FEATURE_force_bundled_libs=ON" ],
     "os_properties": {
         "windows": {
-            "c_compiler": "clang-cl",
-            "cxx_compiler": "clang-cl",
+            "c_compiler": "cl",
+            "cxx_compiler": "cl",
             "flags": [ "-DCMAKE_ASM_COMPILER=ml64" ]
         },
       "linux": {

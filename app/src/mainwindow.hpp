@@ -15,7 +15,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(const std::string& programPath, QWidget *parent = nullptr);
     ~MainWindow();
 
     bool isRunning() const;
@@ -52,6 +52,7 @@ private:
 
     ThreeWayDialog::Result closeAction();
 
+    QString m_SettingsLocation;
     static bool s_MsgInitialized;
     static QString s_WarningMsg;
     static QString s_FileReadMsg;

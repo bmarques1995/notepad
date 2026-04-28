@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QCloseEvent>
 #include <QColorDialog>
+#include <QFont>
 
 QString MainWindow::s_WarningMsg;
 QString MainWindow::s_FileReadMsg;
@@ -14,10 +15,19 @@ QString MainWindow::s_TextColorSelect;
 QString MainWindow::s_OpenFileMsg;
 bool MainWindow::s_MsgInitialized = false;
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(const std::string& programPath, QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    , ui(new Ui::MainWindow),
+	m_SettingsLocation(programPath.c_str())
 {
+#ifndef WIN32
+	// /*/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf*/
+	// QFont font("/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf", 12, QFont::Bold);
+	// font.setPointSizeF(12.0);
+
+	// // Apply to widget
+	// this->setFont(font);
+#endif
     ui->setupUi(this);
 	setCentralWidget(ui->textEdit);
 	if (!s_MsgInitialized)
@@ -70,7 +80,7 @@ void MainWindow::on_actionOpen_triggered()
         if(!file.open(QFile::ReadOnly | QFile::Text))
         {
 			QString preReadWarning = s_FileReadMsg;
-			preReadWarning.arg(filename).arg(file.errorString());
+			QString preReadWarningResponse = preReadWarning.arg(filename).arg(file.errorString());
             QMessageBox::warning(this, s_WarningMsg, preReadWarning);
             return;
 		}
@@ -96,7 +106,7 @@ void MainWindow::on_actionSave_triggered()
 		if (!file.open(QFile::WriteOnly | QFile::Text))
 		{
 			QString preWriteWarning = s_FileWriteMsg;
-			preWriteWarning.arg(m_CurrentFilename).arg(file.errorString());
+			QString preWriteWarningResponse = preWriteWarning.arg(m_CurrentFilename).arg(file.errorString());
 			QMessageBox::warning(this, s_WarningMsg, preWriteWarning);
 			return;
 		}
@@ -122,7 +132,7 @@ void MainWindow::on_actionSave_as_triggered()
 	{
 		QString warningMsg = QCoreApplication::translate("MainWindowMessages", "Warning");
 		QString fileMsg = s_FileWriteMsg;
-		fileMsg.arg(m_CurrentFilename).arg(file.errorString());
+		QString fileMsgResponse = fileMsg.arg(m_CurrentFilename).arg(file.errorString());
 		if (file.exists())
 			QMessageBox::warning(this, s_WarningMsg, fileMsg);
 		return;
@@ -194,7 +204,7 @@ void MainWindow::on_actionBackground_triggered()
 
 void MainWindow::on_actionSettings_triggered()
 {
-	std::string filename = std::filesystem::current_path().string() + "/settings.json";
+	std::string filename = m_SettingsLocation.toStdString() + "/settings.json";
 	m_CurrentFilename = filename.c_str();
 	QFile file(filename.c_str());
 	QString qfilename = filename.c_str();
@@ -208,7 +218,7 @@ void MainWindow::OpenFile(QFile& file, const QString& filename)
 		if (!file.open(QFile::ReadOnly | QFile::Text))
 		{
 			QString preReadWarning = s_FileReadMsg;
-			preReadWarning.arg(filename).arg(file.errorString());
+			QString preReadWarningResponse = preReadWarning.arg(filename).arg(file.errorString());
 			QMessageBox::warning(this, s_WarningMsg, preReadWarning);
 			return;
 		}
